@@ -2,3 +2,8 @@ name: LousyNet-HubCommand
 version: '${project.version}'
 main: info.charlieward.lousynethubcommand.LousyNetHubCommand
 api-version: '1.17'
+authors:
+  - LousyBoi
+commands:
+  hub:
+    usage: /hub
