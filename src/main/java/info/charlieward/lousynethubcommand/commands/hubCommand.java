@@ -28,20 +28,4 @@ public class hubCommand implements CommandExecutor {
         }
         return true;
     }
-
-    public void itemClicked(String serverID, String serverName, Player player) {
-        String serverStatus = plugin.jedis.get(serverID);
-        if (serverStatus == null || serverStatus.equals("offline")) {
-            player.sendMessage(ChatColor.BLUE + "[LousyNet] " + ChatColor.WHITE + "This server is not currently online");
-        } else {
-            if (serverID == "") {
-                player.sendMessage(ChatColor.BLUE + "[LousyNet] " + ChatColor.WHITE + "This server is not currently online");
-            } else if (serverID == "mainHub") {
-                player.sendMessage(ChatColor.BLUE + "[LousyNet] " + ChatColor.WHITE + "You are already connected to this server");
-            } else {
-                player.sendMessage(ChatColor.BLUE + "[LousyNet] " + ChatColor.WHITE + "Sending you to " + serverName);
-                LousyNetHubCommand.sendPlayerToServer(player, serverID);
-            }
-        }
-    }
 }
